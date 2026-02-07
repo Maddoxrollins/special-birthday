@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Happy Birthday Sarvadnya 💖</title>
 
 <!-- Cute Font -->
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
@@ -111,7 +110,7 @@ video {
 
 <!-- PAGE 1 -->
 <div class="page active" id="page1">
-  <h1>🎂 Happy Birthday Sarvadnya 🎂</h1>
+
   <h2>Do you know whose birthday it is? 💕</h2>
   <button id="yesBtn" onclick="goNext()">YESSS!!!!</button>
   <button class="no" onclick="growYes()">No</button>
@@ -124,7 +123,7 @@ video {
   <div>
     <div class="gift-box" onclick="openGift(1)">💌 Letter</div>
     <div class="gift-box" onclick="openGift(2)">📸 Photos</div>
-    <div class="gift-box" onclick="openGift(3)">🎥 Video</div>
+   
     <div class="gift-box" onclick="openGift(4)">💬 Why You</div>
     <div class="gift-box" onclick="openGift(5)">🌙 Ending</div>
   </div>
@@ -192,13 +191,7 @@ Happy Birthday once again, Sarvadnya 💖💖💖
 `;
   }
 
-  if (num === 3) {
-    document.getElementById("giftContent").innerHTML = `
-<h2>🎥 For You 🎥</h2>
-<video controls src="video1.mp4"></video>
-<video controls src="video2.mp4"></video>
-`;
-  }
+
 
   if (num === 4) {
     document.getElementById("giftContent").innerHTML = `

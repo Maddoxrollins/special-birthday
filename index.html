@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Birthday Surprise 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive;
+      background: pink;
+      text-align: center;
+    }
+
+    .page {
+      display: none;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .active {
+      display: flex;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 20px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    .yes {
+      background: hotpink;
+      color: white;
+    }
+
+    .no {
+      background: white;
+      color: hotpink;
+    }
+
+    .gift-box {
+      width: 150px;
+      height: 150px;
+      background: hotpink;
+      margin: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 20px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .content-box {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 80%;
+    }
+
+    img {
+      width: 200px;
+      margin: 10px;
+      border-radius: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+  <h1>🎀 Hey cutie! 🎀</h1>
+  <h2>Do you know whose birthday it is? 💕</h2>
+  <button class="yes" id="yesBtn" onclick="goNext()">YES!!!!!!!</button>
+  <button class="no" onclick="growYes()">No</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+  <h1>🎁 Choose Your Gift 🎁</h1>
+  <div>
+    <div class="gift-box" onclick="openGift(1)">🎂 Letter</div>
+    <div class="gift-box" onclick="openGift(2)">📸 Photos</div>
+    <div class="gift-box" onclick="openGift(3)">💖 Surprise</div>
+  </div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+  <div class="content-box" id="giftContent"></div>
+  <br>
+  <button onclick="goBack()">⬅ Back</button>
+</div>
+
+<script>
+  let yesSize = 20;
+
+  function growYes() {
+    yesSize += 10;
+    document.getElementById("yesBtn").style.fontSize = yesSize + "px";
+  }
+
+  function goNext() {
+    document.getElementById("page1").classList.remove("active");
+    document.getElementById("page2").classList.add("active");
+  }
+
+  function openGift(num) {
+    document.getElementById("page2").classList.remove("active");
+    document.getElementById("page3").classList.add("active");
+
+    if (num === 1) {
+      document.getElementById("giftContent").innerHTML = `
+        <h2>💌 HAPPIEST BIRTHDAYYY!!!! 💌</h2>
+        <p>
+          DEAR SARVADNYAA 💕<br><br>
+          HAPPIEST BIRTHDAY SARVEXX💝,
+          may god complete all your wishes 
+          and keep you happy longlife.
+          you've been the best female bestfriend,person,human 
+          i've ever met. you're different than everyone else,
+          and that's what make you the "LAADKI"
+          the only one a silent boy like me can be 
+          free and do the crazy things and saying anything without
+          thinking twice!!.Your beauty,elegance,charm,cuteness
+          is unmatchable and extraordinary to find.
+          THANK YOUHHH for being this speical
+          in my and everyone's life 💖💖💖
+        </p>
+      `;
+    }
+
+    if (num === 2) {
+      document.getElementById("giftContent").innerHTML = `
+        <h2>📸 your beauty 📸</h2>
+        <img src="photo1.jpg">
+        <img src="photo2.jpg">
+        <img src="photo3.jpg">
+      `;
+    }
+
+    if (num === 3) {
+      document.getElementById("giftContent").innerHTML = `
+        <h2>💖note! 💖</h2>
+        <p>
+          You are loved more than you know 💕
+        </p>
+      `;
+    }
+  }
+
+  function goBack() {
+    document.getElementById("page3").classList.remove("active");
+    document.getElementById("page2").classList.add("active");
+  }
+</script>
+
+</body>
+</html>

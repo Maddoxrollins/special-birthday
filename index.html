@@ -1,92 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Birthday Surprise 💖</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Comic Sans MS', cursive;
-      background: pink;
-      text-align: center;
-    }
+<meta charset="UTF-8">
+<title>Happy Birthday Sarvadnya 💖</title>
 
-    .page {
-      display: none;
-      height: 100vh;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
+<!-- Cute Font -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
-    .active {
-      display: flex;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(#ffb6c1, #ffc0cb);
+  text-align: center;
+  overflow-x: hidden;
+  color: #ff1493;
+}
 
-    button {
-      padding: 15px 30px;
-      font-size: 20px;
-      border-radius: 30px;
-      border: none;
-      cursor: pointer;
-      margin: 10px;
-    }
+h1, h2 {
+  font-family: 'Pacifico', cursive;
+}
 
-    .yes {
-      background: hotpink;
-      color: white;
-    }
+.page {
+  display: none;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 25px;
+}
 
-    .no {
-      background: white;
-      color: hotpink;
-    }
+.active {
+  display: flex;
+}
 
-    .gift-box {
-      width: 150px;
-      height: 150px;
-      background: hotpink;
-      margin: 20px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 20px;
-      border-radius: 20px;
-      cursor: pointer;
-    }
+button {
+  padding: 15px 35px;
+  font-size: 20px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+  background: hotpink;
+  color: white;
+}
 
-    .content-box {
-      background: white;
-      padding: 30px;
-      border-radius: 20px;
-      max-width: 80%;
-    }
+.no {
+  background: white;
+  color: hotpink;
+}
 
-    img {
-      width: 200px;
-      margin: 10px;
-      border-radius: 15px;
-    }
-  </style>
+.gift-box {
+  width: 170px;
+  height: 170px;
+  background: hotpink;
+  margin: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(255,20,147,0.6);
+}
+
+.content-box {
+  background: white;
+  padding: 30px;
+  border-radius: 30px;
+  max-width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+img {
+  width: 200px;
+  margin: 10px;
+  border-radius: 15px;
+}
+
+video {
+  width: 250px;
+  margin: 10px;
+  border-radius: 15px;
+}
+
+/* Floating hearts */
+.heart {
+  position: fixed;
+  top: -10px;
+  font-size: 20px;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+  }
+}
+</style>
 </head>
+
 <body>
+
+<!-- Background Music -->
+<audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
 
 <!-- PAGE 1 -->
 <div class="page active" id="page1">
-  <h1>🎀 Hey cutie! 🎀</h1>
+  <h1>🎂 Happy Birthday Sarvadnya 🎂</h1>
   <h2>Do you know whose birthday it is? 💕</h2>
-  <button class="yes" id="yesBtn" onclick="goNext()">YES!!!!!!!</button>
+  <button id="yesBtn" onclick="goNext()">YESSS!!!!</button>
   <button class="no" onclick="growYes()">No</button>
 </div>
 
 <!-- PAGE 2 -->
 <div class="page" id="page2">
-  <h1>🎁 Choose Your Gift 🎁</h1>
+  <h1>💖 Happy Birthday Sarvadnya 💖</h1>
+  <h2>Choose your surprise 🎁</h2>
   <div>
-    <div class="gift-box" onclick="openGift(1)">🎂 Letter</div>
+    <div class="gift-box" onclick="openGift(1)">💌 Letter</div>
     <div class="gift-box" onclick="openGift(2)">📸 Photos</div>
-    <div class="gift-box" onclick="openGift(3)">💖 Surprise</div>
+    <div class="gift-box" onclick="openGift(3)">🎥 Video</div>
+    <div class="gift-box" onclick="openGift(4)">💬 Why You</div>
+    <div class="gift-box" onclick="openGift(5)">🌙 Ending</div>
   </div>
 </div>
 
@@ -98,66 +138,111 @@
 </div>
 
 <script>
-  let yesSize = 20;
+let yesSize = 20;
 
-  function growYes() {
-    yesSize += 10;
-    document.getElementById("yesBtn").style.fontSize = yesSize + "px";
+function growYes() {
+  yesSize += 10;
+  document.getElementById("yesBtn").style.fontSize = yesSize + "px";
+}
+
+function goNext() {
+  document.getElementById("page1").classList.remove("active");
+  document.getElementById("page2").classList.add("active");
+}
+
+function openGift(num) {
+  document.getElementById("page2").classList.remove("active");
+  document.getElementById("page3").classList.add("active");
+
+  if (num === 1) {
+    document.getElementById("giftContent").innerHTML = `
+<h2>💌 HAPPIEST BIRTHDAYYY SARVADNYA 💌</h2>
+<p style="white-space: pre-line; text-align:left;">
+DEAR SARVADNYAA 💕
+
+HAPPIEST BIRTHDAY SARVEXX 💝  
+Today isn’t just your birthday, it’s a reminder of how special you truly are.
+
+May God fulfill every single wish of yours, the ones you speak out loud and the ones you quietly keep in your heart. May your life always be filled with peace, happiness, love, and warmth, because you genuinely deserve all of it.
+
+You’ve been the best female best friend, the best person, and one of the purest humans I’ve ever met. You’re different from everyone else, and that difference is your magic. That’s what makes you my “LAADKI” — irreplaceable, rare, and precious.
+
+You’re the only person with whom a silent boy like me can be completely free. Free to be crazy, free to be childish, free to speak without thinking twice. With you, silence never feels awkward and words never feel heavy.
+
+Your beauty, elegance, charm, and cuteness are unmatchable. But more than that, your heart, your kindness, and your understanding make you extraordinary.
+
+Thank youhhh for existing.
+Thank youhhh for choosing to stay.
+Thank youhhh for being this special in my life and in everyone else’s.
+
+Happy Birthday once again, Sarvadnya 💖💖💖
+</p>
+`;
   }
 
-  function goNext() {
-    document.getElementById("page1").classList.remove("active");
-    document.getElementById("page2").classList.add("active");
+  if (num === 2) {
+    document.getElementById("giftContent").innerHTML = `
+<h2>📸 Our Memories 📸</h2>
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+<img src="photo4.jpg">
+<img src="photo5.jpg">
+<img src="photo6.jpg">
+`;
   }
 
-  function openGift(num) {
-    document.getElementById("page2").classList.remove("active");
-    document.getElementById("page3").classList.add("active");
-
-    if (num === 1) {
-      document.getElementById("giftContent").innerHTML = `
-        <h2>💌 HAPPIEST BIRTHDAYYY!!!! 💌</h2>
-        <p>
-          DEAR SARVADNYAA 💕<br><br>
-          HAPPIEST BIRTHDAY SARVEXX💝,
-          may god complete all your wishes 
-          and keep you happy longlife.
-          you've been the best female bestfriend,person,human 
-          i've ever met. you're different than everyone else,
-          and that's what make you the "LAADKI"
-          the only one a silent boy like me can be 
-          free and do the crazy things and saying anything without
-          thinking twice!!.Your beauty,elegance,charm,cuteness
-          is unmatchable and extraordinary to find.
-          THANK YOUHHH for being this speical
-          in my and everyone's life 💖💖💖
-        </p>
-      `;
-    }
-
-    if (num === 2) {
-      document.getElementById("giftContent").innerHTML = `
-        <h2>📸 your beauty 📸</h2>
-        <img src="photo1.jpg">
-        <img src="photo2.jpg">
-        <img src="photo3.jpg">
-      `;
-    }
-
-    if (num === 3) {
-      document.getElementById("giftContent").innerHTML = `
-        <h2>💖note! 💖</h2>
-        <p>
-          You are loved more than you know 💕
-        </p>
-      `;
-    }
+  if (num === 3) {
+    document.getElementById("giftContent").innerHTML = `
+<h2>🎥 For You 🎥</h2>
+<video controls src="video1.mp4"></video>
+<video controls src="video2.mp4"></video>
+`;
   }
 
-  function goBack() {
-    document.getElementById("page3").classList.remove("active");
-    document.getElementById("page2").classList.add("active");
+  if (num === 4) {
+    document.getElementById("giftContent").innerHTML = `
+<h2>💬 Why You 💬</h2>
+<p>
+Because you care without conditions.  
+Because you listen even to silence.  
+Because you stay when others leave.  
+Because you make life softer just by being you 💕
+</p>
+`;
   }
+
+  if (num === 5) {
+    document.getElementById("giftContent").innerHTML = `
+<h2>🌙 One Last Thing 🌙</h2>
+<p>
+No matter where life takes us,  
+No matter how time changes things,  
+I’ll always wish for your happiness,  
+your smile, and your peace.
+
+Happy Birthday Sarvadnya 🎂  
+Always stay the way you are 💖
+</p>
+`;
+  }
+}
+
+function goBack() {
+  document.getElementById("page3").classList.remove("active");
+  document.getElementById("page2").classList.add("active");
+}
+
+/* Heart rain */
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💖";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}, 300);
 </script>
 
 </body>

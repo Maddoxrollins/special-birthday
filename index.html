@@ -74,9 +74,10 @@ button {
   text-align: left;
 }
 
-video {
-  width: 260px;
+img {
+  width: 220px;
   border-radius: 20px;
+  margin: 10px;
 }
 </style>
 </head>
@@ -102,7 +103,7 @@ video {
   <h2>This is only for you 💖</h2>
   <div>
     <div class="gift-box" onclick="openGift(1)">💌 Letter</div>
-    <div class="gift-box" onclick="openGift(2)">🎥 Video</div>
+    <div class="gift-box" onclick="openGift(2)">📸 Photos</div>
     <div class="gift-box" onclick="openGift(3)">🌙 Ending</div>
   </div>
 </div>
@@ -186,8 +187,10 @@ Happy Birthday once again, Sarvadnya 💖💖💖
 
   if (num === 2) {
     document.getElementById("giftContent").innerHTML = `
-<h2>🎥 Just For You 🎥</h2>
-<video controls src="video1.mp4"></video>
+<h2>📸 little beauty 📸</h2>
+![image alt](
+<img src="photo2.jpg">
+<img src="photo3.jpg">
 `;
   }
 

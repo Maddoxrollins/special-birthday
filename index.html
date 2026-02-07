@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>Happy Birthday Sarvadnya 💖</title>
 
-<!-- Cute Font -->
+<!-- Cute Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
@@ -12,7 +13,6 @@ body {
   font-family: 'Quicksand', sans-serif;
   background: linear-gradient(#ffb6c1, #ffc0cb);
   text-align: center;
-  overflow-x: hidden;
   color: #ff1493;
 }
 
@@ -50,8 +50,8 @@ button {
 }
 
 .gift-box {
-  width: 170px;
-  height: 170px;
+  width: 190px;
+  height: 190px;
   background: hotpink;
   margin: 15px;
   display: inline-flex;
@@ -59,7 +59,7 @@ button {
   justify-content: center;
   color: white;
   font-size: 18px;
-  border-radius: 25px;
+  border-radius: 30px;
   cursor: pointer;
   box-shadow: 0 0 20px rgba(255,20,147,0.6);
 }
@@ -71,32 +71,12 @@ button {
   max-width: 90%;
   max-height: 80vh;
   overflow-y: auto;
-}
-
-img {
-  width: 200px;
-  margin: 10px;
-  border-radius: 15px;
+  text-align: left;
 }
 
 video {
-  width: 250px;
-  margin: 10px;
-  border-radius: 15px;
-}
-
-/* Floating hearts */
-.heart {
-  position: fixed;
-  top: -10px;
-  font-size: 20px;
-  animation: fall linear infinite;
-}
-
-@keyframes fall {
-  to {
-    transform: translateY(110vh);
-  }
+  width: 260px;
+  border-radius: 20px;
 }
 </style>
 </head>
@@ -110,7 +90,7 @@ video {
 
 <!-- PAGE 1 -->
 <div class="page active" id="page1">
-
+  <h1>🎀 Hey You 🎀</h1>
   <h2>Do you know whose birthday it is? 💕</h2>
   <button id="yesBtn" onclick="goNext()">YESSS!!!!</button>
   <button class="no" onclick="growYes()">No</button>
@@ -118,14 +98,12 @@ video {
 
 <!-- PAGE 2 -->
 <div class="page" id="page2">
-  <h1>💖 Happy Birthday Sarvadnya 💖</h1>
-  <h2>Choose your surprise 🎁</h2>
+  <h1>🎂 HAPPY BIRTHDAY SARVADNYA 🎂</h1>
+  <h2>This is only for you 💖</h2>
   <div>
     <div class="gift-box" onclick="openGift(1)">💌 Letter</div>
-    <div class="gift-box" onclick="openGift(2)">📸 Photos</div>
-   
-    <div class="gift-box" onclick="openGift(4)">💬 Why You</div>
-    <div class="gift-box" onclick="openGift(5)">🌙 Ending</div>
+    <div class="gift-box" onclick="openGift(2)">🎥 Video</div>
+    <div class="gift-box" onclick="openGift(3)">🌙 Ending</div>
   </div>
 </div>
 
@@ -155,24 +133,51 @@ function openGift(num) {
 
   if (num === 1) {
     document.getElementById("giftContent").innerHTML = `
-<h2>💌 HAPPIEST BIRTHDAYYY SARVADNYA 💌</h2>
-<p style="white-space: pre-line; text-align:left;">
-DEAR SARVADNYAA 💕
+<h2>💌 HAPPIEST BIRTHDAY SARVADNYA 💌</h2>
 
-HAPPIEST BIRTHDAY SARVEXX 💝  
+<p style="white-space: pre-line;">
+HAPPIEST BIRTHDAYYY!!!! 💌
+
+DEAR SARVADNYAA 💕  
+HAPPIEST BIRTHDAY SARVEXX 💝,
+may god complete all your wishes
+and keep you happy longlife.
+
+you've been the best female bestfriend, person, human
+i've ever met. you're different than everyone else,
+and that's what make you the "LAADKI"
+
+the only one a silent boy like me can be
+free and do the crazy things and saying anything without
+thinking twice!!
+
+your beauty, elegance, charm, cuteness
+is unmatchable and extraordinary to find.
+
+THANK YOUHHH for being this speical
+in my and everyone's life 💖💖💖
+</p>
+
+<hr>
+
+<p style="white-space: pre-line;">
 Today isn’t just your birthday, it’s a reminder of how special you truly are.
 
-May God fulfill every single wish of yours, the ones you speak out loud and the ones you quietly keep in your heart. May your life always be filled with peace, happiness, love, and warmth, because you genuinely deserve all of it.
+May God fulfill every single wish of yours, even the ones you never say out loud.
+May your life always be filled with happiness, peace, love, and calm moments.
 
-You’ve been the best female best friend, the best person, and one of the purest humans I’ve ever met. You’re different from everyone else, and that difference is your magic. That’s what makes you my “LAADKI” — irreplaceable, rare, and precious.
+You’ve been the best female best friend, the best person, and one of the purest humans I’ve ever met.
+You’re different from everyone else, and that difference is what makes you my “LAADKI”.
 
-You’re the only person with whom a silent boy like me can be completely free. Free to be crazy, free to be childish, free to speak without thinking twice. With you, silence never feels awkward and words never feel heavy.
+You’re the only person with whom a silent boy like me can be completely free —
+free to be crazy, free to be childish, free to speak without thinking twice.
 
-Your beauty, elegance, charm, and cuteness are unmatchable. But more than that, your heart, your kindness, and your understanding make you extraordinary.
+Your beauty, elegance, charm, and cuteness are unmatchable,
+but your heart, kindness, and understanding make you truly extraordinary.
 
 Thank youhhh for existing.
-Thank youhhh for choosing to stay.
-Thank youhhh for being this special in my life and in everyone else’s.
+Thank youhhh for staying.
+Thank youhhh for being this special in my life.
 
 Happy Birthday once again, Sarvadnya 💖💖💖
 </p>
@@ -181,36 +186,17 @@ Happy Birthday once again, Sarvadnya 💖💖💖
 
   if (num === 2) {
     document.getElementById("giftContent").innerHTML = `
-<h2>📸 Our Memories 📸</h2>
-<img Screenshot_20260207-232852_Gallery.jpg
-<img src="photo2.jpg">
-<img src="photo3.jpg">
-<img src="photo4.jpg">
-<img src="photo5.jpg">
-<img src="photo6.jpg">
+<h2>🎥 Just For You 🎥</h2>
+<video controls src="video1.mp4"></video>
 `;
   }
 
-
-
-  if (num === 4) {
-    document.getElementById("giftContent").innerHTML = `
-<h2>💬 Why You 💬</h2>
-<p>
-Because you care without conditions.  
-Because you listen even to silence.  
-Because you stay when others leave.  
-Because you make life softer just by being you 💕
-</p>
-`;
-  }
-
-  if (num === 5) {
+  if (num === 3) {
     document.getElementById("giftContent").innerHTML = `
 <h2>🌙 One Last Thing 🌙</h2>
 <p>
 No matter where life takes us,  
-No matter how time changes things,  
+no matter how time changes things,  
 I’ll always wish for your happiness,  
 your smile, and your peace.
 
@@ -225,17 +211,6 @@ function goBack() {
   document.getElementById("page3").classList.remove("active");
   document.getElementById("page2").classList.add("active");
 }
-
-/* Heart rain */
-setInterval(() => {
-  const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerHTML = "💖";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = Math.random() * 3 + 3 + "s";
-  document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 6000);
-}, 300);
 </script>
 
 </body>
